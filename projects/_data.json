@@ -1,0 +1,32 @@
+{
+	"book1": {
+		"title": "Внедрение в популярную литературу",
+		"original_link": "https://vk.com/doc2183732_437616383",
+		"link": "http://bit.ly/bhtsr"
+
+	},
+
+	"book2": {
+		"title": "\"Гендер для чайников - 2\" ",
+		"original_link": "https://vk.com/doc22825734_154126415",
+		"link": "http://bit.ly/bhchain2"
+	},
+
+	"book3": {
+		"title": "\"Манифест киборгов\", Донна Харауэй",
+		"original_link": "https://vk.com/doc12791205_276201099?hash=b12cc371414e724d3c",
+		"link": "http://bit.ly/haraway"
+	},
+
+	"book4": {
+		"title": "\"Гендерное беспокойство\", Джудит Батлер",
+		"original_link": "https://vk.com/doc2183732_437616391",
+		"link": "http://bit.ly/bhtroub"
+	},
+
+	"book5": {
+		"title": "\"Психика власти\", Джудит Батлер",
+		"original_link": "https://vk.com/doc-44351814_147701643",
+		"link": "http://bit.ly/vlasti"
+	}
+}

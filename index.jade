@@ -1,0 +1,86 @@
+div.cover
+
+	//- img.documentation(src="images/IMG_20160624_191204-22.jpeg")
+	//- iframe.documentation(width="560" height="315" src="https://www.youtube.com/embed/N_9A8GBYgSY?autoplay=1&loop=1&showinfo=0&controls=0" frameborder="0" allowfullscreen)
+	video.documentation(preload autoplay muted loop)
+		source(src="/videos/bookhacking_documentation.mp4")
+
+	div.textover
+		h1 #bookhacking
+		h2 «We take a vacant space in someone's head and we fill it with literature»
+		h3 — Tony, “Portlandia”
+		
+
+div.main
+
+	//- iframe.documentation(width="560" height="315" src="https://www.youtube.com/embed/8cI1AUJWOXI" frameborder="0" allowfullscreen)
+
+	div.
+		описание проекта
+	
+	ul
+
+		for book, id in public.projects._data
+
+			//- li
+			//- 	script.
+			//- 		var getUrl = "https://api-ssl.bitly.com/v3/link/clicks?access_token=df2a8139306c44b9ec9ed78d34c6d7957f567696&link=" + encodeURIComponent('#{book.link}');
+
+			//- 		$.get(getUrl, function(response) {
+			//- 			$('##{id}').text(response.data.link_clicks);
+			//- 		});
+			//- 	div.counter
+			//- 		| views 
+			//- 		span(id=id)
+			//- 			| 
+
+			//- 	a.link(href=book.link target='_blank')= book.title
+
+			li
+				script.
+					var getUrl = "https://api-ssl.bitly.com/v3/link/clicks?access_token=df2a8139306c44b9ec9ed78d34c6d7957f567696&link=" + encodeURIComponent('#{book.link}');
+
+					$.get(getUrl, function(response) {
+						$('##{id}').text(response.data.link_clicks);
+					});
+				div.counter
+					| views 
+					span(id=id)
+						| 
+
+				a.link(href=book.original_link target='_blank')= book.title	
+
+
+div.gallery.swiper-container
+	
+	.swiper-wrapper
+		for image, index in public.images._contents
+			if (typeof image != 'undefined' && image.match(/\b.(jpg|bmp|jpeg|gif|png|tif)\b/gi) )
+				.swiper-slide(style="background-image: url('/images/#{image}')")
+
+	.swiper-pagination
+	.swiper-button-next
+	.swiper-button-prev
+
+script.
+	var swiper = new Swiper('.swiper-container', {
+		//- pagination: '.swiper-pagination',
+		nextButton: '.swiper-button-next',
+		prevButton: '.swiper-button-prev',
+		//- paginationClickable: true,
+		spaceBetween: 0,
+		centeredSlides: true,
+		autoplay: 5000,
+		loop: true
+		// autoplayDisableOnInteraction: false
+	});
+
+
+div.main
+	p
+
+		span.
+		//- | Для связи: 
+		//- br
+		a(href="mailto:bookhacking@mail.ru") bookhacking@mail.ru
+

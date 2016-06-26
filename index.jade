@@ -7,8 +7,8 @@ div.cover
 
 	div.textover
 		h1 #bookhacking
-		h2 «We take a vacant space in someone's head and we fill it with literature»
-		h3 — Tony, “Portlandia”
+		h2 «Мы берём свободное место в чьих-то головах и заполняем литературой»
+		h3 — Тони и Кэндис, Портландия
 		
 
 div.main
@@ -38,15 +38,21 @@ div.main
 
 			li
 				script.
+					function declOfNum(number, titles) {  
+					    cases = [2, 0, 1, 1, 1, 2];  
+					    return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
+					}
+
 					var getUrl = "https://api-ssl.bitly.com/v3/link/clicks?access_token=df2a8139306c44b9ec9ed78d34c6d7957f567696&link=" + encodeURIComponent('#{book.link}');
 
 					$.get(getUrl, function(response) {
-						$('##{id}').text(response.data.link_clicks);
+						$('##{id}').text(response.data.link_clicks + " " + declOfNum(response.data.link_clicks, ['просмотр', 'просмотра', 'просмотров']));
 					});
+
+
 				div.counter
-					| views 
-					span(id=id)
-						| 
+					span(id=id) 
+					
 
 				a.link(href=book.original_link target='_blank')= book.title	
 

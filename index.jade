@@ -7,10 +7,14 @@ div.cover
 
 	div.textover
 		h1 #bookhacking
-		h2 «Мы берём свободное место в чьих-то головах и заполняем литературой»
-		h3 — Тони и Кендис, книжный магазин
-			br
-			|  Women&Women First, Portlandia
+		h2 «Мы берём свободное место в чьих-то головах и заполняем его литературой»
+		h3 — Тони и Кендис, магазин книг, Portlandia
+			//- br
+			//- |  Women&Women First, Portlandia
+		//- br
+		//- p
+		//- 	span.
+		//- 	a(href="mailto:bookhacking@mail.ru") bookhacking@mail.ru
 		
 
 div.main
@@ -18,8 +22,13 @@ div.main
 	//- iframe.documentation(width="560" height="315" src="https://www.youtube.com/embed/8cI1AUJWOXI" frameborder="0" allowfullscreen)
 
 	div.
-		описание проекта
-	
+
+		Множество потоков бесполезной информации, привлекающей внимание своей яркой обложкой распространяются, подобно вирусу заражая наше сознание. 
+		Маленькие незаметные агенты в городских книжных магазинах распрстраняют ссылки на качественную литературу, находящуюся в свободном доступе, выступая за экологию пользования, экологию сознания. 
+	br
+	|	Вложенный стикер предлагает электронную версию книги для скачивания, но с бессмысленным текстом lorem ipsum вместо сожержания. К уличенным в сексизме книгам — электронные версии феминисткой литературы.
+
+
 	ul
 
 		for book, id in public.projects._data
@@ -57,6 +66,9 @@ div.main
 					
 
 				a.link(href=book.original_link target='_blank')= book.title	
+	//- p
+	//- 	span.
+	//- 	a(href="mailto:bookhacking@mail.ru") bookhacking@mail.ru
 
 
 div.gallery.swiper-container
@@ -88,7 +100,5 @@ div.main
 	p
 
 		span.
-		//- | Для связи: 
-		//- br
 		a(href="mailto:bookhacking@mail.ru") bookhacking@mail.ru
 
